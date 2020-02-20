@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   <bean id="g1" class="com.cts.service.GreetServiceSimpleImpl"></bean>
+    <bean id="g2" class="com.cts.service.GreetServiceEnhancedImpl">
+<!--     <property name="greeting" value="hai"/> -->
+<constructor-arg index="0" value="namaskar"></constructor-arg>
+    
+    </bean>
+    
+    
+    <bean id="gnp1" class="com.cts.service.GreetNoteProviderSimpleImpl">
+    <!-- we don't have field so no need of property or constructor -->
+    
+    </bean>
+    
+    <bean id="g3" class="com.cts.service.GreetServiceAdvancedImpl">
+    <property name="gnp" ref="gnp1"/> 
+	</bean>
+	
+	<!--  inner beans can also have properties-->
+	 <bean id="g4" class="com.cts.service.GreetServiceAdvancedImpl">
+    <property name="gnp" > 
+    <bean class="com.cts.service.GreetNoteProviderTimeBasedImpl"/>
+    </property>
+	
+    
+    </bean>
+    
+    
+   </beans>
