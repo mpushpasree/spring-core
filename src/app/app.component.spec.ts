@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'emp-crud-app'`, () => {
+  it(`should have as title 'angular-spring-test'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('emp-crud-app');
+    expect(app.title).toEqual('angular-spring-test');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('emp-crud-app app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('angular-spring-test app is running!');
   });
 });

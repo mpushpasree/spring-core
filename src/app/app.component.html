@@ -1,2 +1,3 @@
+<app-header [webTitle]="title"></app-header>
 
-<router-outlet></router-outlet>
+<app-title-editor [webTitle]="title" (titleChanged)="changeTitle($event)"></app-title-editor>
